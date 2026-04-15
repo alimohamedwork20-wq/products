@@ -28,7 +28,7 @@ export default function HeroSlider() {
             </Link>
           </div>
 
-          <img src="/img/banner_Hero1.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/banner_Hero1.jpg"} />
         </SwiperSlide>
 
         <SwiperSlide className="slide-hero">
@@ -41,7 +41,7 @@ export default function HeroSlider() {
             </Link>
           </div>
 
-          <img src="/img/banner_Hero2.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/banner_Hero2.jpg"} />
         </SwiperSlide>
 
         <SwiperSlide className="slide-hero">
@@ -54,7 +54,7 @@ export default function HeroSlider() {
             </Link>
           </div>
 
-          <img src="/img/banner_Hero3.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL + "/img/banner_Hero3.jpg"} />
         </SwiperSlide>
       </Swiper>
     </div>

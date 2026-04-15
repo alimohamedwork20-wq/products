@@ -120,7 +120,7 @@ function BlogCard({ item, isOpen, toggle }) {
         {!imgLoaded && <LoadingBlog />}
 
         <img
-          src={`/img/blog${item.id}.jpg`}
+          src={process.env.PUBLIC_URL + `/img/blog${item.id}.jpg`}
           alt={item.title}
           loading="lazy"
           onLoad={() => setImgLoaded(true)}
