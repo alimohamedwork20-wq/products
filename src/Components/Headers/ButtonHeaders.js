@@ -23,7 +23,7 @@ export default function ButtonHeaders() {
   const path = useLocation();
   // عرض الشاشه
   const [width, setWidth] = useState(window.innerWidth);
-
+  const categoryRef = useRef();
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -36,6 +36,19 @@ export default function ButtonHeaders() {
     };
   }, []);
   const navRef = useRef();
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (categoryRef.current && !categoryRef.current.contains(e.target)) {
+        setCategoryActiv(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="buttom-header">
       <div className="container">
@@ -55,12 +68,17 @@ export default function ButtonHeaders() {
               )}
             </div>
             <div
+              ref={categoryRef}
               className={
                 categoryActiv ? "category-select actives" : "category-select"
               }
             >
               {productsList.map((item, index) => (
-                <Link key={index} to={`category/${item.slug}`}>
+                <Link
+                  onClick={() => setCategoryActiv(false)}
+                  key={index}
+                  to={`category/${item.slug}`}
+                >
                   {item.name}
                 </Link>
               ))}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Blog.css";
 import LoadingBlog from "./LoadingBlog";
-
+import PageTransition from "../../Components/PageTransition";
 export default function Blog() {
   const [openId, setOpenId] = useState(null);
 
@@ -114,41 +114,44 @@ function BlogCard({ item, isOpen, toggle }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <div className="blog-card">
-      {/* الصورة + loading */}
-      <div className="image-wrapper">
-        {!imgLoaded && <LoadingBlog />}
+    <PageTransition>
+      {" "}
+      <div className="blog-card">
+        {/* الصورة + loading */}
+        <div className="image-wrapper">
+          {!imgLoaded && <LoadingBlog />}
 
-        <img
-          src={process.env.PUBLIC_URL + `/img/blog${item.id}.jpg`}
-          alt={item.title}
-          loading="lazy"
-          onLoad={() => setImgLoaded(true)}
-          style={{
-            opacity: imgLoaded ? 1 : 0,
-            transition: "0.3s",
-            width: "100%",
-            height: "200px",
-            objectFit: "cover",
-          }}
-        />
+          <img
+            src={process.env.PUBLIC_URL + `/img/blog${item.id}.jpg`}
+            alt={item.title}
+            loading="lazy"
+            onLoad={() => setImgLoaded(true)}
+            style={{
+              opacity: imgLoaded ? 1 : 0,
+              transition: "0.3s",
+              width: "100%",
+              height: "200px",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        {/* المحتوى */}
+        {imgLoaded && (
+          <>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+
+            <button onClick={() => toggle(item.id)}>
+              {isOpen ? "إخفاء" : "اقرأ المزيد"}
+            </button>
+
+            <div className={`collapse-box ${isOpen ? "open" : ""}`}>
+              <p>{item.content}</p>
+            </div>
+          </>
+        )}
       </div>
-
-      {/* المحتوى */}
-      {imgLoaded && (
-        <>
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
-
-          <button onClick={() => toggle(item.id)}>
-            {isOpen ? "إخفاء" : "اقرأ المزيد"}
-          </button>
-
-          <div className={`collapse-box ${isOpen ? "open" : ""}`}>
-            <p>{item.content}</p>
-          </div>
-        </>
-      )}
-    </div>
+    </PageTransition>
   );
 }
