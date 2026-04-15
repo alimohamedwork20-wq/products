@@ -35,24 +35,27 @@ function App() {
         ></Toaster>
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="products" element={<Home></Home>}></Route>
             <Route
               path="product/:id"
               element={<ProductsDetails></ProductsDetails>}
             ></Route>
             <Route
-              path="category/:category"
+              path="products/category/:category"
               element={<CategoryPage></CategoryPage>}
             ></Route>
             <Route path="cart" element={<Cart></Cart>}></Route>
             <Route path="contact" element={<Contact></Contact>}></Route>
             <Route
-              path="contact/succes-content"
+              path="products/products/contact/succes-content"
               element={<SuccesContent></SuccesContent>}
             ></Route>
-            <Route path="search" element={<SearchPage></SearchPage>}></Route>
-            <Route path="blog" element={<Blog></Blog>}></Route>
-            <Route path="about" element={<About></About>}></Route>
+            <Route
+              path="products/search"
+              element={<SearchPage></SearchPage>}
+            ></Route>
+            <Route path="products/blog" element={<Blog></Blog>}></Route>
+            <Route path="products/about" element={<About></About>}></Route>
             <Route
               path="accessories"
               element={<Accessories></Accessories>}

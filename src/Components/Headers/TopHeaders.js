@@ -63,7 +63,7 @@ export default function TopHeaders() {
       className="top-header"
     >
       <div className="container">
-        <Link className="logo" to="/">
+        <Link className="logo" to="products">
           <img src={process.env.PUBLIC_URL + "products/img/logo.png"} />
         </Link>
 

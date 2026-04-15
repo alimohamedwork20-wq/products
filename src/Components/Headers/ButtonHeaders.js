@@ -14,7 +14,7 @@ export default function ButtonHeaders() {
       .then((data) => setProductsList(data));
   }, []);
   const navLinks = [
-    { title: "Home", link: "/" },
+    { title: "Home", link: "products" },
     { title: "About", link: "/about" },
     { title: "Accessories", link: "/accessories" },
     { title: "Blog", link: "/blog" },
