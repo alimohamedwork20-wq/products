@@ -50,10 +50,7 @@ function App() {
               path="/contact/succes-content"
               element={<SuccesContent></SuccesContent>}
             ></Route>
-            <Route
-              path="products/search"
-              element={<SearchPage></SearchPage>}
-            ></Route>
+            <Route path="/search" element={<SearchPage></SearchPage>}></Route>
             <Route path="/blog" element={<Blog></Blog>}></Route>
             <Route path="/about" element={<About></About>}></Route>
             <Route

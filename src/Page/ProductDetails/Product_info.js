@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 export default function Product_info({ product }) {
-  const { cartItems, addCart } = useContext(CartContext);
+  const { cartItems, addCart, toggleFavorite, favoriteItems } =
+    useContext(CartContext);
   const isInCart = cartItems.some((item) => item.id === product?.id);
-  const [activeH, setActiveH] = useState(false);
 
   function handelCart() {
     addCart(product);
@@ -38,6 +38,8 @@ export default function Product_info({ product }) {
       alert("Sharing not supported on this browser");
     }
   };
+  const isInFav = (id) =>
+    Array.isArray(favoriteItems) && favoriteItems.some((fav) => fav.id === id);
   return (
     <div className="item-name">
       <h1>{product?.title}</h1>
@@ -78,17 +80,12 @@ export default function Product_info({ product }) {
         )}
         <div className="icons">
           {" "}
-          {!activeH ? (
-            <i
-              className="fa-regular fa-heart "
-              onClick={() => setActiveH(true)}
-            ></i>
-          ) : (
-            <i
-              className="fa-solid fa-heart"
-              onClick={() => setActiveH(false)}
-            ></i>
-          )}
+          <i
+            className={
+              isInFav(product.id) ? "fa-solid fa-heart" : "fa-regular fa-heart "
+            }
+            onClick={() => toggleFavorite(product)}
+          ></i>
           <i onClick={handleShare} className="fa-solid fa-share"></i>
         </div>
       </div>

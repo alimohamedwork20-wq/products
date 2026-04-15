@@ -21,17 +21,19 @@ export default function Cart() {
       <div className="checkout">
         <div className="ordersummary">
           <h1>Order Summary</h1>
-          <p
-            onClick={DeleteAll}
-            style={{
-              textAlign: "right",
-              color: "red",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            delete all
-          </p>
+          {cartItems.length >= 2 && (
+            <p
+              onClick={DeleteAll}
+              style={{
+                textAlign: "right",
+                color: "red",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              delete all
+            </p>
+          )}
 
           <div className="items">
             {cartItems.length > 0 ? (

@@ -53,6 +53,13 @@ export default function TopHeaders() {
       alert("Link copied to clipboard");
     }
   };
+  const closeOffcanvas = () => {
+    const el = document.querySelector(".offcanvas.show");
+    if (el) {
+      const instance = window.bootstrap.Offcanvas.getInstance(el);
+      instance?.hide();
+    }
+  };
   return (
     <div
       style={{
@@ -63,7 +70,7 @@ export default function TopHeaders() {
       className="top-header"
     >
       <div className="container">
-        <Link className="logo" to="products">
+        <Link className="logo" to="/">
           <img src={process.env.PUBLIC_URL + "/img/logo.png"} />
         </Link>
 
@@ -164,6 +171,7 @@ export default function TopHeaders() {
                       >
                         {isInCart(item.id) ? (
                           <Link
+                            onClick={() => closeOffcanvas()}
                             to={"cart"}
                             style={{ margin: "10px 0" }}
                             className="btn btn-primary"
@@ -180,6 +188,7 @@ export default function TopHeaders() {
                           </Link>
                         )}
                         <Link
+                          onClick={() => closeOffcanvas()}
                           style={{ transform: "translateY(10%)" }}
                           to={`product/${item.id}`}
                         >
