@@ -14,11 +14,11 @@ export default function ButtonHeaders() {
       .then((data) => setProductsList(data));
   }, []);
   const navLinks = [
-    { title: "Home", link: "products" },
-    { title: "About", link: "products/about" },
-    { title: "Accessories", link: "products/accessories" },
-    { title: "Blog", link: "products/blog" },
-    { title: "Contact", link: "products/contact" },
+    { title: "Home", link: "/" },
+    { title: "About", link: "/about" },
+    { title: "Accessories", link: "/accessories" },
+    { title: "Blog", link: "/blog" },
+    { title: "Contact", link: "/contact" },
   ];
   const path = useLocation();
   // عرض الشاشه
@@ -33,20 +33,6 @@ export default function ButtonHeaders() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setMenuOpen(false);
-        setCategoryActiv(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
   const navRef = useRef();
@@ -74,7 +60,7 @@ export default function ButtonHeaders() {
               }
             >
               {productsList.map((item, index) => (
-                <Link key={index} to={`products/category/${item.slug}`}>
+                <Link key={index} to={`category/${item.slug}`}>
                   {item.name}
                 </Link>
               ))}

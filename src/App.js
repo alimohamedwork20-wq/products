@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./Page/Home";
 import ProductsDetails from "./Page/ProductDetails/ProductsDetails";
 import Cart from "./Page/Cart/Cart";
@@ -16,7 +16,7 @@ import Accessories from "./Page/Accessories/Accessories";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <TopHeaders />
         <ButtonHeaders />
         <Toaster
@@ -35,37 +35,34 @@ function App() {
         ></Toaster>
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="products" element={<Home></Home>}></Route>
+            <Route path="/" element={<Home></Home>}></Route>
             <Route
               path="product/:id"
               element={<ProductsDetails></ProductsDetails>}
             ></Route>
             <Route
-              path="products/category/:category"
+              path="/category/:category"
               element={<CategoryPage></CategoryPage>}
             ></Route>
-            <Route path="products/cart" element={<Cart></Cart>}></Route>
+            <Route path="/cart" element={<Cart></Cart>}></Route>
+            <Route path="/contact" element={<Contact></Contact>}></Route>
             <Route
-              path="products/contact"
-              element={<Contact></Contact>}
-            ></Route>
-            <Route
-              path="products/products/contact/succes-content"
+              path="/contact/succes-content"
               element={<SuccesContent></SuccesContent>}
             ></Route>
             <Route
               path="products/search"
               element={<SearchPage></SearchPage>}
             ></Route>
-            <Route path="products/blog" element={<Blog></Blog>}></Route>
-            <Route path="products/about" element={<About></About>}></Route>
+            <Route path="/blog" element={<Blog></Blog>}></Route>
+            <Route path="/about" element={<About></About>}></Route>
             <Route
-              path="products/accessories"
+              path="/accessories"
               element={<Accessories></Accessories>}
             ></Route>
           </Routes>
         </AnimatePresence>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

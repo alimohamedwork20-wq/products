@@ -14,7 +14,7 @@ export default function ProductsDetails() {
 
   useEffect(() => {
     axios
-      .get(`https://dummyjson.com/products/${path}`)
+      .get(`https://dummyjson.com/product/${path}`)
       .then((data) => setProduct(data.data));
   }, [id]);
   if (!product) {

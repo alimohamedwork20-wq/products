@@ -88,7 +88,7 @@ export default function TopHeaders() {
           </div>
 
           <div className="icon">
-            <Link to={"products/cart"}>
+            <Link to={"cart"}>
               <i className="text-black fa-solid fa-cart-shopping"></i>
             </Link>
             <span className="count">{number}</span>
@@ -164,7 +164,7 @@ export default function TopHeaders() {
                       >
                         {isInCart(item.id) ? (
                           <Link
-                            to={"products/cart"}
+                            to={"cart"}
                             style={{ margin: "10px 0" }}
                             className="btn btn-primary"
                           >
