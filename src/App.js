@@ -44,8 +44,11 @@ function App() {
               path="products/category/:category"
               element={<CategoryPage></CategoryPage>}
             ></Route>
-            <Route path="cart" element={<Cart></Cart>}></Route>
-            <Route path="contact" element={<Contact></Contact>}></Route>
+            <Route path="products/cart" element={<Cart></Cart>}></Route>
+            <Route
+              path="products/contact"
+              element={<Contact></Contact>}
+            ></Route>
             <Route
               path="products/products/contact/succes-content"
               element={<SuccesContent></SuccesContent>}
@@ -57,7 +60,7 @@ function App() {
             <Route path="products/blog" element={<Blog></Blog>}></Route>
             <Route path="products/about" element={<About></About>}></Route>
             <Route
-              path="accessories"
+              path="products/accessories"
               element={<Accessories></Accessories>}
             ></Route>
           </Routes>

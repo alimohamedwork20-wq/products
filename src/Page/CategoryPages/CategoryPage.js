@@ -12,7 +12,7 @@ export default function CategoryPage() {
   const lastPart = path.split("/").filter(Boolean).pop();
   useEffect(() => {
     setLoading(true);
-    fetch(`https://dummyjson.com/products${path}`)
+    fetch(`https://dummyjson.com${path}`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
       .finally(() => setLoading(false));

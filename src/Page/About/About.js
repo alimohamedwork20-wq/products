@@ -7,7 +7,7 @@ export default function About() {
       {/* HERO */}
       <section
         style={{
-          backgroundImage: `linear-gradient(rgba(24, 111, 210, 0.32), rgba(255, 255, 255, 0.03)), url("/img/pexels-siljeao-264851155-35560482.jpg")`,
+          backgroundImage: `linear-gradient(rgba(24, 111, 210, 0.32), rgba(255, 255, 255, 0.03)), url(${process.env.PUBLIC_URL}/img/pexels-siljeao-264851155-35560482.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

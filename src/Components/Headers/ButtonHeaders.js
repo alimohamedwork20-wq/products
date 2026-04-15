@@ -15,10 +15,10 @@ export default function ButtonHeaders() {
   }, []);
   const navLinks = [
     { title: "Home", link: "products" },
-    { title: "About", link: "/about" },
-    { title: "Accessories", link: "/accessories" },
-    { title: "Blog", link: "/blog" },
-    { title: "Contact", link: "/contact" },
+    { title: "About", link: "products/about" },
+    { title: "Accessories", link: "products/accessories" },
+    { title: "Blog", link: "products/blog" },
+    { title: "Contact", link: "products/contact" },
   ];
   const path = useLocation();
   // عرض الشاشه
@@ -74,7 +74,7 @@ export default function ButtonHeaders() {
               }
             >
               {productsList.map((item, index) => (
-                <Link key={index} to={`category/${item.slug}`}>
+                <Link key={index} to={`products/category/${item.slug}`}>
                   {item.name}
                 </Link>
               ))}

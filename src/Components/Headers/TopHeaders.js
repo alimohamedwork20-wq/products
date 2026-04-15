@@ -64,7 +64,7 @@ export default function TopHeaders() {
     >
       <div className="container">
         <Link className="logo" to="products">
-          <img src={process.env.PUBLIC_URL + "products/img/logo.png"} />
+          <img src={process.env.PUBLIC_URL + "/img/logo.png"} />
         </Link>
 
         <Search></Search>
@@ -88,7 +88,7 @@ export default function TopHeaders() {
           </div>
 
           <div className="icon">
-            <Link to={"cart"}>
+            <Link to={"products/cart"}>
               <i className="text-black fa-solid fa-cart-shopping"></i>
             </Link>
             <span className="count">{number}</span>
@@ -164,7 +164,7 @@ export default function TopHeaders() {
                       >
                         {isInCart(item.id) ? (
                           <Link
-                            to={"/cart"}
+                            to={"products/cart"}
                             style={{ margin: "10px 0" }}
                             className="btn btn-primary"
                           >

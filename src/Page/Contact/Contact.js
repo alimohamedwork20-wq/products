@@ -13,7 +13,8 @@ export default function Contact() {
   });
   const playSound = () => {
     const audio = new Audio(
-      "/ksjsbwuil-apple-pay-success-sound-effect-481188.mp3",
+      process.env.PUBLIC_URL +
+        "/ksjsbwuil-apple-pay-success-sound-effect-481188.mp3",
     );
     audio.play();
   };

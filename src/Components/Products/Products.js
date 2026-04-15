@@ -62,7 +62,7 @@ export default function Products({ item }) {
         >
           <div className="img-products">
             {" "}
-            <Link to={`/product/${item.id}`}>
+            <Link to={`products/product/${item.id}`}>
               <img src={item.thumbnail} className="card-img-top" alt="..." />
             </Link>
             <div className="icons">
@@ -83,7 +83,7 @@ export default function Products({ item }) {
               ></i>
             </div>
           </div>
-          <Link to={`/product/${item.id}`}>
+          <Link to={`products/product/${item.id}`}>
             {" "}
             <div className="card-body">
               <h5 className="card-title">{item.title}</h5>
