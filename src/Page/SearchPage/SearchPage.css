@@ -1,0 +1,49 @@
+.search-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* الكارد */
+.search-page .card-item {
+  flex: 1 1 250px; /* أقل عرض للكارد */
+  max-width: 250px;
+}
+
+.search-page .card-item:hover .icons {
+  right: 35px;
+}
+/* 📱 موبايل صغير */
+@media (max-width: 576px) {
+  .search-page {
+    justify-content: center;
+  }
+
+  .search-page .card-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* 📱 تابلت */
+@media (min-width: 577px) and (max-width: 768px) {
+  .search-page .card-item {
+    flex: 1 1 45%;
+  }
+}
+
+/* 💻 لابتوب */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-page .card-item {
+    flex: 1 1 30%;
+  }
+}
+
+/* 🖥️ شاشة كبيرة */
+@media (min-width: 1025px) {
+  .search-page .card-item {
+    flex: 1 1 22%;
+  }
+}

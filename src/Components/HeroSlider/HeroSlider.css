@@ -1,0 +1,63 @@
+.hero {
+  position: relative;
+  width: 80%;
+  padding-top: 20px;
+  margin: auto;
+}
+
+/* يخلي السلايدر مرن */
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* مهم عشان الموبايل */
+.swiper {
+  width: 100%;
+  height: 550px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slide-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* الصورة مرنة */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* المحتوى يبقى فوق الصورة */
+.swiper-slide .content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  max-width: 500px;
+  text-align: left;
+  z-index: 2;
+}
+
+/* مهم جدًا للاستجابة */
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .swiper {
+    height: 350px;
+  }
+
+  .swiper-slide .content {
+    max-width: 90%;
+  }
+}

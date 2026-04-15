@@ -1,0 +1,101 @@
+.contact-page {
+  padding: 60px 15px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* الكونتينر الرئيسي */
+.contact-page .container {
+  box-shadow: 1px 1px 50px rgb(178, 178, 178);
+  width: 100%;
+  max-width: 600px; /* بدل 40% */
+  border-radius: 10px;
+  border: 1px solid rgba(0, 157, 255, 0.303);
+  padding: 40px 20px;
+  background: #fff;
+}
+.contact-page .container i {
+  color: #2895f5;
+}
+/* العنوان */
+.contact-page h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* الفورم */
+.contact-form {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+/* الزرار */
+.contact-form button {
+  padding: 12px;
+  background: #1285e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hover */
+.contact-form button:hover {
+  background: #0f6ec4;
+}
+
+/* ===================== */
+/* 📱 Responsive Design */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .contact-page .container {
+    max-width: 95%;
+    padding: 25px 15px;
+  }
+
+  .contact-page h2 {
+    font-size: 24px;
+  }
+
+  .contact-form {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 30px 10px;
+  }
+
+  .contact-page h2 {
+    font-size: 20px;
+  }
+
+  .contact-form button {
+    font-size: 14px;
+  }
+}

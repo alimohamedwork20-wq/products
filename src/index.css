@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #0090f0;
+  --p-color: #7b7b7b;
+  --bg-color: #f3f3f3;
+  --white-color: #fff;
+  --color-heading: #253237;
+  --border-color: #d6d6d6d5;
+}
+body {
+  background-color: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-family: "DM Sans", sans-serif;
+}
+span {
+  color: var(--main-color);
+}
+p {
+  color: var(--p-color);
+}
+input,
+button,
+select,
+textarea {
+  outline: none;
+  border: none;
+}
+link {
+  text-decoration: none;
+  color: var(--color-heading);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1350px;
+}
+.btn {
+  padding: 10px 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: 0.2s;
+  width: max-content;
+}
+.btn:hover {
+  transform: scale(1.1);
+  background-color: var(--main-color);
+  color: white;
+}
+.stoast-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 250px;
+  max-width: 250px;
+}
+.stoast-wrapper strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.stoast-img {
+  width: auto;
+  height: 80px;
+  object-fit: cover;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: #0090f0;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.scroll-top:hover {
+  background-color: #0077cc;
+  transform: translateY(-5px);
+}
+.search-suggestions {
+  background-color: white;
+  padding: 10px 20px;
+  position: fixed;
+  min-height: 1px;
+  width: 31%;
+  border-radius: 20px 20px 5px 5px;
+  border: 1px solid rgb(215, 215, 215);
+}
+.search-suggestions li {
+  color: black;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #c3c3c3;
+  cursor: pointer;
+}
+.search-suggestions li:last-child {
+  border: none;
+}
+.search-suggestions p {
+  transform: translateY(30%);
+}

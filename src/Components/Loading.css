@@ -1,0 +1,57 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(221, 217, 217);
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
+/* الكارت */
+.card-skeleton {
+  width: 220px;
+  padding: 15px;
+  transform: translateY(-110%);
+  border-radius: 8px;
+  background-color: #f3f3f3;
+}
+
+/* الصورة */
+.card-skeleton .img {
+  width: 100%;
+  height: 150px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* النص */
+.card-skeleton .line {
+  height: 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card-skeleton .title {
+  width: 80%;
+}
+
+.card-skeleton .price {
+  width: 50%;
+}
+
+/* الانيميشن */
+.card-skeleton .img,
+.card-skeleton .line {
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,239 @@
+:root {
+  --main-color: #0090f0;
+  --p-color: #7b7b7b;
+  --bg-color: #f3f3f3;
+  --white-color: #fff;
+  --color-heading: #253237;
+  --border-color: #d6d6d6d5;
+}
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50000;
+}
+body {
+  padding-top: 80px;
+}
+.top-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.top-header .logo {
+  width: 160px;
+}
+.search-box {
+  width: 500px;
+  align-items: center;
+  display: flex;
+  background-color: var(--bg-color);
+  border-radius: 30px;
+  border: 1px solid var(--main-color);
+}
+.search-box input {
+  width: 440px;
+  height: 45px;
+  padding: 5px 15px 5px 20px;
+  background-color: var(--bg-color);
+  border-radius: 30px 0 0 30px;
+}
+.search-box button {
+  height: 45px;
+  width: 60px;
+  background-color: var(--main-color);
+  border-radius: 0 30px 30px 0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header-icons .icon {
+  position: relative;
+  cursor: pointer;
+}
+.header-icons .icon i {
+  font-size: 25px;
+}
+.header-icons .icon .count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 100%;
+  font-size: 11px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+/* --------buttom-header ----------*/
+
+.buttom-header {
+  background-color: var(--main-color);
+}
+.buttom-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+  height: 80px;
+}
+.category-nav {
+  width: 220px;
+  height: 100%;
+  margin-top: 2%;
+  position: relative;
+}
+.category-select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(2%);
+  background-color: var(--white-color);
+  border: 1px solid #bbbbbb;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 0 0 0px 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: 0.2s;
+  z-index: 50;
+}
+.category-select.actives {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.category-select a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  border-bottom: 1px solid #c0c0c0;
+  transition: 0.2s;
+}
+.category-select a:last-child {
+  border-bottom: 0;
+}
+.category-select a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.category-btn {
+  display: flex;
+  cursor: pointer;
+  color: white;
+  gap: 10px;
+  transform: translateY(80%);
+  align-items: center;
+  background-color: var(--main-color);
+  width: 200px;
+}
+
+.category-btn p {
+  color: white;
+  margin: 0;
+}
+.category-list {
+  display: flex;
+  gap: 40px;
+  z-index: 1000;
+}
+
+.category-list li {
+  list-style: none;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 26px 10px;
+}
+.category-list li a {
+  text-decoration: none;
+  font-size: 18px;
+  height: 100%;
+  color: white;
+  padding: 10px;
+}
+.category-list li:hover {
+  background-color: #0089e5;
+}
+.sign-icons {
+  text-align: end;
+  width: 100%;
+}
+.sign-icons i {
+  font-size: 18px;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+}
+.sign-icons i:hover {
+  color: #c7c7c7;
+}
+.active {
+  background-color: #0080d6;
+}
+/* =========================
+   RESPONSIVE FIX ONLY
+   ========================= */
+
+/* =========================
+   MOBILE FIX
+   ========================= */
+/* =========================
+   BOTTOM HEADER RESPONSIVE ONLY
+   ========================= */
+/* زرار الموبايل */
+/* الديسكتوب = ظاهر طبيعي */
+.show-desktop {
+  display: block;
+}
+
+/* Bootstrap collapse يفضل زي ما هو */
+.navbar-collapse {
+  transition: 0.3s;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* موبايل */
+@media (max-width: 1090px) {
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .category-list {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transform: translateY(19%);
+    width: 100%;
+    background: #0984dc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .category-list.open {
+    max-height: 460px;
+    display: block; /* يتحكم في الطول */
+  }
+}
